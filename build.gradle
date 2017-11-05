@@ -32,8 +32,6 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.codehaus.groovy:groovy-all')
-//	compile 'org.codehaus.groovy:groovy-all:2.4.12'
-
 
 	compile("com.codeborne:selenide:4.8")
 	compile("org.twitter4j:twitter4j-core:4.0.6")
