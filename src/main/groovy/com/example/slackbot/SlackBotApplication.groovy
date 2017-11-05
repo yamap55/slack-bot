@@ -1,7 +1,7 @@
-package com.example.springtest
+package com.example.slackbot
 
-import com.example.springtest.app.ComponentTest
-import com.example.springtest.app.Gyazo
+import com.example.slackbot.app.ComponentTest
+import com.example.slackbot.app.Gyazo
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
