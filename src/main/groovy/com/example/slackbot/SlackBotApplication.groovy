@@ -11,9 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 class SpringTestApplication implements CommandLineRunner {
 
 	@Autowired
-	ComponentTest componentTest
-
-	@Autowired
 	Gyazo gyazo
 
 	static void main(String[] args) {
@@ -22,8 +19,6 @@ class SpringTestApplication implements CommandLineRunner {
 
 	@Override
 	void run(String... args) throws Exception {
-		componentTest.hoge()
-
 		println gyazo.upload(new File("/Users/yamap_55/Desktop/pic1.png"))
 	}
 }
