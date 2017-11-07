@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class SpringTestApplication implements CommandLineRunner {
+class SlackBotApplication implements CommandLineRunner {
 
 	@Autowired
 	Gyazo gyazo
@@ -17,7 +17,7 @@ class SpringTestApplication implements CommandLineRunner {
 	SelenideExecuter selenide
 
 	static void main(String[] args) {
-		SpringApplication.run SpringTestApplication, args
+		SpringApplication.run SlackBotApplication, args
 	}
 
 	@Override
