@@ -3,6 +3,7 @@ package com.example.slackbot
 import com.example.slackbot.app.Gyazo
 import com.example.slackbot.app.ImageEditor
 import com.example.slackbot.app.SelenideExecuter
+import com.example.slackbot.app.TwitterExecuter
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
@@ -20,6 +21,9 @@ class SlackBotApplication implements CommandLineRunner {
 	@Autowired
 	ImageEditor imageEditor
 
+	@Autowired
+	TwitterExecuter twitterExecuter
+
 	static void main(String[] args) {
 		SpringApplication.run SlackBotApplication, args
 	}
@@ -35,5 +39,7 @@ class SlackBotApplication implements CommandLineRunner {
 			imageEditor.subImageForMac(hatenaCapInfo1),
 			imageEditor.subImageForMac(hatenaCapInfo2)
 		].each {println gyazo.upload(it)}
+
+		println twitterExecuter.searchFirstTweet("from:Yahoo_weather 東京の天気")
 	}
 }
