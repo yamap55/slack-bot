@@ -27,9 +27,13 @@ class SlackBotApplication implements CommandLineRunner {
 	@Override
 	void run(String... args) throws Exception {
 		def capInfo = selenide.getCapture("https://weather.yahoo.co.jp/weather/13/4410.html", [".forecastCity"])
+		def hatenaCapInfo1 = selenide.getCapture("http://counting.hatelabo.jp/count/amgtleca46", [".main-count"])
+		def hatenaCapInfo2 = selenide.getCapture("http://counting.hatelabo.jp/count/xp2p2eyaa9", [".main-count"])
 
-		// Macでは何故か値を2倍する必要あり
-		def f = imageEditor.subImage(capInfo.file, capInfo.x * 2, capInfo.y * 2, capInfo.width * 2, capInfo.height * 2)
-		println gyazo.upload(f)
+		[
+			imageEditor.subImageForMac(capInfo),
+			imageEditor.subImageForMac(hatenaCapInfo1),
+			imageEditor.subImageForMac(hatenaCapInfo2)
+		].each {println gyazo.upload(it)}
 	}
 }

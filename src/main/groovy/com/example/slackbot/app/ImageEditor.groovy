@@ -17,4 +17,12 @@ class ImageEditor {
         ImageIO.write(outputImage, "PNG", outputFile)
         return outputFile
     }
+
+    static File subImage(captureInfo) {
+        return subImage(captureInfo.file, captureInfo.x, captureInfo.y, captureInfo.width, captureInfo.height)
+    }
+
+    static File subImageForMac(captureInfo) {
+        return subImage(captureInfo.file, captureInfo.x * 2, captureInfo.y * 2, captureInfo.width * 2, captureInfo.height * 2)
+    }
 }
