@@ -26,7 +26,7 @@ class SlackBotApplication implements CommandLineRunner {
 
 	static void main(String[] args) {
 		def ctx = SpringApplication.run SlackBotApplication, args
-		def app =ctx.getBean(SlackBotApplication)
+		def app = ctx.getBean(SlackBotApplication)
 		app.run(args)
 	}
 
