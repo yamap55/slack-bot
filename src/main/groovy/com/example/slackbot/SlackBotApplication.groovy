@@ -25,10 +25,11 @@ class SlackBotApplication implements CommandLineRunner {
 	TwitterExecuter twitterExecuter
 
 	static void main(String[] args) {
-		SpringApplication.run SlackBotApplication, args
+		def ctx = SpringApplication.run SlackBotApplication, args
+		def app =ctx.getBean(SlackBotApplication)
+		app.run(args)
 	}
 
-	@Override
 	void run(String... args) throws Exception {
 		def capInfo = selenide.getCapture("https://weather.yahoo.co.jp/weather/13/4410.html", [".forecastCity"])
 		def hatenaCapInfo1 = selenide.getCapture("http://counting.hatelabo.jp/count/amgtleca46", [".main-count"])
