@@ -5,12 +5,11 @@ import com.example.slackbot.app.ImageEditor
 import com.example.slackbot.app.SelenideExecuter
 import com.example.slackbot.app.TwitterExecuter
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class SlackBotApplication implements CommandLineRunner {
+class SlackBotApplication {
 
 	@Autowired
 	Gyazo gyazo
