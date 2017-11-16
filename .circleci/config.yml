@@ -44,15 +44,17 @@ jobs:
       - run:
           name: Save test results
           command: |
-            mkdir -p ~/repo/junit/
-            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/repo/junit/ \;
+            mkdir -p ~/reports/junit/
+            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/reports/junit/ \;
           when: always
       - run:
           name: Save coverage reports
           command: |
-            mkdir -p ~/repo/jacoco/
-            find . -type f -regex ".*/build/customJacocoReportDir/.*xml" -exec cp {} ~/repo/jacoco/ \;
+            mkdir -p ~/reports/jacoco/
+            find . -type f -regex ".*/build/customJacocoReportDir/.*xml" -exec cp {} ~/reports/jacoco/ \;
+            find . -type f -regex ".*/build/jacocoHtml/.*html" -exec cp {} ~/reports/jacoco/ \;
+          when: always
       - store_test_results:
-          path: ~/repo
+          path: ~/reports
       - store_artifacts:
-          path: ~/repo
+          path: ~/reports
