@@ -47,7 +47,12 @@ jobs:
             mkdir -p ~/repo/junit/
             find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/repo/junit/ \;
           when: always
+      - run:
+          name: Save coverage reports
+          command: |
+            mkdir -p ~/repo/jacoco/
+            find . -type f -regex ".*/build/customJacocoReportDir/.*xml" -exec cp {} ~/repo/jacoco/ \;
       - store_test_results:
-          path: ~/repo/junit
+          path: ~/repo
       - store_artifacts:
-          path: ~/repo/junit
+          path: ~/repo
