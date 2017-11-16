@@ -52,7 +52,7 @@ jobs:
           command: |
             mkdir -p ~/reports/jacoco/
             find . -type f -regex ".*/build/customJacocoReportDir/.*xml" -exec cp {} ~/reports/jacoco/ \;
-            find . -type f -regex ".*/build/jacocoHtml/.*html" -exec cp {} ~/reports/jacoco/ \;
+            cp -r /home/circleci/repo/build/jacocoHtml ~/reports/jacoco/
           when: always
       - store_test_results:
           path: ~/reports
