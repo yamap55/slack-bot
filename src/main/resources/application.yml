@@ -1,2 +1,14 @@
 gyazo:
   token: token
+slack:
+  token: token
+anniversary:
+  days:
+    - name: つきあい始めてから
+      url: http://counting.hatelabo.jp/count/amgtleca46
+      selectors:
+        - .main-count
+    - name: 結婚してから
+      url: http://counting.hatelabo.jp/count/xp2p2eyaa9
+      selectors:
+        - .main-count
